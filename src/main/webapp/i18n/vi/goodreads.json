@@ -1,0 +1,27 @@
+{
+  "bookshareApp": {
+    "goodreads": {
+      "home": {
+        "title": "Goodreads",
+        "createLabel": "Thêm mới một Goodreads",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Goodreads",
+        "notFound": "No Goodreads found"
+      },
+      "created": "Một Goodreads mới được tạo với định danh {{ param }}",
+      "updated": "Một Goodreads cập nhật với định danh {{ param }}",
+      "deleted": "Một Goodreads đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Goodreads {{ id }}?"
+      },
+      "detail": {
+        "title": "Goodreads"
+      },
+      "bookId": "Book Id",
+      "gRBookId": "G R Book Id",
+      "ratingCount": "Rating Count",
+      "textReviewsCount": "Text Reviews Count",
+      "averageRating": "Average Rating",
+      "lastUpdated": "Last Updated"
+    }
+  }
+}

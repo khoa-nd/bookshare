@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="book">
+            <h2><span jhiTranslate="bookshareApp.book.detail.title">Book</span> {{book.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bookshareApp.book.title">Title</span></dt>
+                <dd>
+                    <span>{{book.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.author">Author</span></dt>
+                <dd>
+                    <span>{{book.author}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.year">Year</span></dt>
+                <dd>
+                    <span>{{book.year}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.publisher">Publisher</span></dt>
+                <dd>
+                    <span>{{book.publisher}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.pages">Pages</span></dt>
+                <dd>
+                    <span>{{book.pages}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.language">Language</span></dt>
+                <dd>
+                    <span>{{book.language}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.topic">Topic</span></dt>
+                <dd>
+                    <span>{{book.topic}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.identifier">Identifier</span></dt>
+                <dd>
+                    <span>{{book.identifier}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.filesize">Filesize</span></dt>
+                <dd>
+                    <span>{{book.filesize}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.extension">Extension</span></dt>
+                <dd>
+                    <span>{{book.extension}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.md5">Md 5</span></dt>
+                <dd>
+                    <span>{{book.md5}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.coverurl">Coverurl</span></dt>
+                <dd>
+                    <span>{{book.coverurl}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.averageRating">Average Rating</span></dt>
+                <dd>
+                    <span>{{book.averageRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.ratingCount">Rating Count</span></dt>
+                <dd>
+                    <span>{{book.ratingCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.originalPublicationYear">Original Publication Year</span></dt>
+                <dd>
+                    <span>{{book.originalPublicationYear}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.originalPublicationMonth">Original Publication Month</span></dt>
+                <dd>
+                    <span>{{book.originalPublicationMonth}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.book.originalPublicationDay">Original Publication Day</span></dt>
+                <dd>
+                    <span>{{book.originalPublicationDay}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/book', book.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

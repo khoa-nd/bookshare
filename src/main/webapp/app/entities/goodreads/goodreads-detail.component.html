@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="goodreads">
+            <h2><span jhiTranslate="bookshareApp.goodreads.detail.title">Goodreads</span> {{goodreads.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bookshareApp.goodreads.bookId">Book Id</span></dt>
+                <dd>
+                    <span>{{goodreads.bookId}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.goodreads.gRBookId">G R Book Id</span></dt>
+                <dd>
+                    <span>{{goodreads.gRBookId}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.goodreads.ratingCount">Rating Count</span></dt>
+                <dd>
+                    <span>{{goodreads.ratingCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.goodreads.textReviewsCount">Text Reviews Count</span></dt>
+                <dd>
+                    <span>{{goodreads.textReviewsCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.goodreads.averageRating">Average Rating</span></dt>
+                <dd>
+                    <span>{{goodreads.averageRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookshareApp.goodreads.lastUpdated">Last Updated</span></dt>
+                <dd>
+                    <span>{{goodreads.lastUpdated}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/goodreads', goodreads.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

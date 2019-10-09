@@ -1,0 +1,38 @@
+{
+  "bookshareApp": {
+    "book": {
+      "home": {
+        "title": "Books",
+        "createLabel": "Thêm mới một Book",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Book",
+        "notFound": "No Books found"
+      },
+      "created": "Một Book mới được tạo với định danh {{ param }}",
+      "updated": "Một Book cập nhật với định danh {{ param }}",
+      "deleted": "Một Book đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Book {{ id }}?"
+      },
+      "detail": {
+        "title": "Book"
+      },
+      "title": "Title",
+      "author": "Author",
+      "year": "Year",
+      "publisher": "Publisher",
+      "pages": "Pages",
+      "language": "Language",
+      "topic": "Topic",
+      "identifier": "Identifier",
+      "filesize": "Filesize",
+      "extension": "Extension",
+      "md5": "Md 5",
+      "coverurl": "Coverurl",
+      "averageRating": "Average Rating",
+      "ratingCount": "Rating Count",
+      "originalPublicationYear": "Original Publication Year",
+      "originalPublicationMonth": "Original Publication Month",
+      "originalPublicationDay": "Original Publication Day"
+    }
+  }
+}

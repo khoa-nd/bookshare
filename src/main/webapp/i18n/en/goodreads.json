@@ -1,0 +1,27 @@
+{
+  "bookshareApp": {
+    "goodreads": {
+      "home": {
+        "title": "Goodreads",
+        "createLabel": "Create a new Goodreads",
+        "createOrEditLabel": "Create or edit a Goodreads",
+        "notFound": "No Goodreads found"
+      },
+      "created": "A new Goodreads is created with identifier {{ param }}",
+      "updated": "A Goodreads is updated with identifier {{ param }}",
+      "deleted": "A Goodreads is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Goodreads {{ id }}?"
+      },
+      "detail": {
+        "title": "Goodreads"
+      },
+      "bookId": "Book Id",
+      "gRBookId": "G R Book Id",
+      "ratingCount": "Rating Count",
+      "textReviewsCount": "Text Reviews Count",
+      "averageRating": "Average Rating",
+      "lastUpdated": "Last Updated"
+    }
+  }
+}

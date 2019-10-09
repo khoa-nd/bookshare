@@ -1,0 +1,38 @@
+{
+  "bookshareApp": {
+    "book": {
+      "home": {
+        "title": "Books",
+        "createLabel": "Create a new Book",
+        "createOrEditLabel": "Create or edit a Book",
+        "notFound": "No Books found"
+      },
+      "created": "A new Book is created with identifier {{ param }}",
+      "updated": "A Book is updated with identifier {{ param }}",
+      "deleted": "A Book is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Book {{ id }}?"
+      },
+      "detail": {
+        "title": "Book"
+      },
+      "title": "Title",
+      "author": "Author",
+      "year": "Year",
+      "publisher": "Publisher",
+      "pages": "Pages",
+      "language": "Language",
+      "topic": "Topic",
+      "identifier": "Identifier",
+      "filesize": "Filesize",
+      "extension": "Extension",
+      "md5": "Md 5",
+      "coverurl": "Coverurl",
+      "averageRating": "Average Rating",
+      "ratingCount": "Rating Count",
+      "originalPublicationYear": "Original Publication Year",
+      "originalPublicationMonth": "Original Publication Month",
+      "originalPublicationDay": "Original Publication Day"
+    }
+  }
+}

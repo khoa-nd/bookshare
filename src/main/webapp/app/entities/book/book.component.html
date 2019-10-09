@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bookshareApp.book.home.title">Books</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-book" [routerLink]="['/book/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="bookshareApp.book.home.createLabel">
+            Create a new Book
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="books?.length === 0">
+        <span jhiTranslate="bookshareApp.book.home.notFound">No books found</span>
+    </div>
+    <div class="table-responsive" *ngIf="books?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="title"><span jhiTranslate="bookshareApp.book.title">Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="author"><span jhiTranslate="bookshareApp.book.author">Author</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="year"><span jhiTranslate="bookshareApp.book.year">Year</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="publisher"><span jhiTranslate="bookshareApp.book.publisher">Publisher</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pages"><span jhiTranslate="bookshareApp.book.pages">Pages</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="language"><span jhiTranslate="bookshareApp.book.language">Language</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="topic"><span jhiTranslate="bookshareApp.book.topic">Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="identifier"><span jhiTranslate="bookshareApp.book.identifier">Identifier</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="filesize"><span jhiTranslate="bookshareApp.book.filesize">Filesize</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="extension"><span jhiTranslate="bookshareApp.book.extension">Extension</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="md5"><span jhiTranslate="bookshareApp.book.md5">Md 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="coverurl"><span jhiTranslate="bookshareApp.book.coverurl">Coverurl</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="averageRating"><span jhiTranslate="bookshareApp.book.averageRating">Average Rating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ratingCount"><span jhiTranslate="bookshareApp.book.ratingCount">Rating Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="originalPublicationYear"><span jhiTranslate="bookshareApp.book.originalPublicationYear">Original Publication Year</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="originalPublicationMonth"><span jhiTranslate="bookshareApp.book.originalPublicationMonth">Original Publication Month</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="originalPublicationDay"><span jhiTranslate="bookshareApp.book.originalPublicationDay">Original Publication Day</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of books ;trackBy: trackId">
+                <td><a [routerLink]="['/book', book.id, 'view' ]">{{book.id}}</a></td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.year}}</td>
+                <td>{{book.publisher}}</td>
+                <td>{{book.pages}}</td>
+                <td>{{book.language}}</td>
+                <td>{{book.topic}}</td>
+                <td>{{book.identifier}}</td>
+                <td>{{book.filesize}}</td>
+                <td>{{book.extension}}</td>
+                <td>{{book.md5}}</td>
+                <td>{{book.coverurl}}</td>
+                <td>{{book.averageRating}}</td>
+                <td>{{book.ratingCount}}</td>
+                <td>{{book.originalPublicationYear}}</td>
+                <td>{{book.originalPublicationMonth}}</td>
+                <td>{{book.originalPublicationDay}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/book', { outlets: { popup: book.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="books?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
