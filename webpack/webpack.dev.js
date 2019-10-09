@@ -50,12 +50,13 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
         chunkFilename: 'app/[id].chunk.js'
     },
     module: {
-        rules: [{
-            test: /\.(j|t)s$/,
-            enforce: 'pre',
-            loader: 'eslint-loader',
-            exclude: /node_modules/
-        },
+        rules: [
+        // {
+        //     test: /\.(j|t)s$/,
+        //     enforce: 'pre',
+        //     loader: 'eslint-loader',
+        //     exclude: /node_modules/
+        // },
         {
             test: /\.ts$/,
             use: [
@@ -66,15 +67,15 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
                       cacheDirectory: path.resolve('target/cache-loader')
                     }
                 },
-                {
-                    loader: 'thread-loader',
-                    options: {
-                        // There should be 1 cpu for the fork-ts-checker-webpack-plugin.
-                        // The value may need to be adjusted (e.g. to 1) in some CI environments,
-                        // as cpus() may report more cores than what are available to the build.
-                        workers: require('os').cpus().length - 1
-                    }
-                },
+                // {
+                //     loader: 'thread-loader',
+                //     options: {
+                //         // There should be 1 cpu for the fork-ts-checker-webpack-plugin.
+                //         // The value may need to be adjusted (e.g. to 1) in some CI environments,
+                //         // as cpus() may report more cores than what are available to the build.
+                //         workers: require('os').cpus().length - 1
+                //     }
+                // },
                 {
                     loader: 'ts-loader',
                     options: {

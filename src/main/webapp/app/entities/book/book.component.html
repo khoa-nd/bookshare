@@ -4,7 +4,7 @@
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-book" [routerLink]="['/book/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span  jhiTranslate="bookshareApp.book.home.createLabel">
-            Create a new Book
+            Create a new Book aa
             </span>
         </button>
     </h2>
@@ -12,6 +12,11 @@
     <br/>
     <div class="alert alert-warning" *ngIf="books?.length === 0">
         <span jhiTranslate="bookshareApp.book.home.notFound">No books found</span>
+    </div>
+    <div>
+        <select name="topic">
+            <option value="">Mathematics</option>
+        </select>
     </div>
     <div class="table-responsive" *ngIf="books?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
