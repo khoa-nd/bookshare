@@ -14,9 +14,27 @@
         <span jhiTranslate="bookshareApp.book.home.notFound">No books found</span>
     </div>
     <div>
-        <select name="topic">
-            <option value="">Mathematics</option>
+        <select [(ngModel)]="topic">
+            <option value="">Select topic</option>
+            <option value="113">Mathematics</option>
+            <option value="1">Business</option>
+            <option value="87">Computer Programming</option>
         </select>
+        <select [(ngModel)]="year">
+            <option value="">Select year</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+        </select>
+        <select [(ngModel)]="publisher">
+            <option value="">Select publisher</option>
+            <option value="Manning Publications">Manning Publications</option>
+            <option value="MIT Press">MIT Press</option>
+            <option value="McGraw-Hill">McGraw-Hill</option>
+            <option value="Addison-Wesley">Addison-Wesley</option>
+            <option value="Springer">Springer</option>
+        </select>
+        <button (click)="onSearch()">Search</button>
     </div>
     <div class="table-responsive" *ngIf="books?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">

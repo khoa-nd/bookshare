@@ -30,6 +30,9 @@ export class BookComponent implements OnInit, OnDestroy {
   predicate: any;
   previousPage: any;
   reverse: any;
+  topic: any = '';
+  year: any = '';
+  publisher: any = '';
 
   constructor(
     protected bookService: BookService,
@@ -50,12 +53,22 @@ export class BookComponent implements OnInit, OnDestroy {
   }
 
   loadAll() {
-    this.bookService
-      .query({
+    let criteria = {
         page: this.page - 1,
         size: this.itemsPerPage,
         sort: this.sort()
-      })
+     };
+    if (this.topic) {
+        criteria['topic.equals'] = this.topic;
+    }
+    if (this.year) {
+        criteria['year.equals'] = this.year;
+    }
+    if (this.publisher) {
+        criteria['publisher.equals'] = this.publisher;
+    }
+    this.bookService
+      .query(criteria)
       .subscribe(
         (res: HttpResponse<IBook[]>) => this.paginateBooks(res.body, res.headers),
         (res: HttpErrorResponse) => this.onError(res.message)
@@ -118,6 +131,10 @@ export class BookComponent implements OnInit, OnDestroy {
       result.push('id');
     }
     return result;
+  }
+
+  onSearch() {
+      this.loadAll();
   }
 
   protected paginateBooks(data: IBook[], headers: HttpHeaders) {
